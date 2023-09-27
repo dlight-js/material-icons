@@ -1,0 +1,44 @@
+{
+  "name": "@dlightjs/material-icons",
+  "version": "0.10.1",
+  "description": "Material icons for DLight.js",
+  "author": {
+    "name": "IanDx",
+    "email": "iandxssxx@gmail.com"
+  },
+  "keywords": [
+    "dlight.js",
+    "material"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "node scripts/tsupBabel.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.6",
+    "@babel/core": "^7.20.12",
+    "@dlightjs/types": "^0.10.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "babel-preset-dlight": "^0.10.1",
+    "eslint": "^8.41.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "tsup": "^6.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-plugin-dlight": "^0.10.1"
+  },
+  "dependencies": {
+    "@dlightjs/decorators": "^0.10.1",
+    "@dlightjs/dlight": "^0.10.1"
+  }
+}
