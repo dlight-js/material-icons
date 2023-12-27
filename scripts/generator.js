@@ -3,22 +3,21 @@ import path from "path"
 
 function template(content, name) {
   return `import { View } from "@dlightjs/dlight"
-import { type Typed, type Pretty } from "@dlightjs/types"
-import { ForwardProp } from "@dlightjs/decorators"
+import { type Typed, type Pretty, ForwardProps, type PropertyWithEvent } from "@dlightjs/types"
 import DLightIcon, { type DLightIconType } from "../DLightIcon.view"
 
 @View
-@ForwardProp
+@ForwardProps
 class ${name} {
-  Body() {
+  View() {
     DLightIcon()
-      .forwardProps(true)
+      .forwardProps()
       .content("${content}")
       .name("${name}")
   }
 }
 
-export default ${name} as Pretty as Typed<DLightIconType, HTMLSpanElement>
+export default ${name} as Pretty as Typed<DLightIconType, PropertyWithEvent<HTMLSpanElement>>
 `
 }
 
