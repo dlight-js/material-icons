@@ -1,6 +1,6 @@
-import { Prop, View, required } from "@dlightjs/dlight"
+import { View } from "@dlightjs/dlight"
+import { ForwardProps, Prop, required } from "@dlightjs/types"
 import { span, type Typed, type Pretty } from "@dlightjs/types"
-import { ForwardProp } from "@dlightjs/decorators"
 interface DLightIconProps {
   content: string
   name: string
@@ -12,7 +12,7 @@ interface DLightIconProps {
 }
 
 @View
-@ForwardProp
+@ForwardProps
 class DLightIcon implements DLightIconProps {
   @Prop content: string = required
   @Prop name: string = required
@@ -31,12 +31,18 @@ class DLightIcon implements DLightIconProps {
    */
   @Prop fontSize = undefined
 
-  _$forwardProps = true
-
-  Body() {
+  View() {
     span()
-      .className(`MUI-Icon-${this.name}`)
-      .innerHTML(`<svg xmlns="http://www.w3.org/2000/svg" width="${this.width}" height="${this.height}" viewBox="0 0 24 24"${this.color ? ` fill="${this.color}"` : ""}${this.opacity ? ` opacity="${this.opacity}"` : ""}${this.fontSize ? ` font-size="${this.fontSize}"` : ""}>${this.content}</svg>`)
+      .class(`MUI-Icon-${this.name}`)
+      .innerHTML(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${
+          this.width
+        }" height="${this.height}" viewBox="0 0 24 24"${
+          this.color ? ` fill="${this.color}"` : ""
+        }${this.opacity ? ` opacity="${this.opacity}"` : ""}${
+          this.fontSize ? ` font-size="${this.fontSize}"` : ""
+        }>${this.content}</svg>`
+      )
       .forwardProps()
   }
 }
