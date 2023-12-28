@@ -9,6 +9,7 @@ interface DLightIconProps {
   color?: string
   opacity?: string
   fontSize?: string
+  class?: string
 }
 
 @View
@@ -31,9 +32,11 @@ class DLightIcon implements DLightIconProps {
    */
   @Prop fontSize = undefined
 
+  @Prop class = undefined
+
   View() {
     span()
-      .class(`MUI-Icon-${this.name}`)
+      .class(`MUI-Icon-${this.name} ${this.class}`.trim())
       .innerHTML(
         `<svg xmlns="http://www.w3.org/2000/svg" width="${
           this.width

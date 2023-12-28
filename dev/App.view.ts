@@ -1,12 +1,16 @@
 import { View } from "@dlightjs/dlight"
 import { type Typed, type Pretty, div } from "@dlightjs/types"
-import { AbcFilled, AbcOutlined } from "../src"
+import { AbcFilled, AbcOutlined, CloseFilled } from "../src"
 interface AppProps {}
 
 @View
 class App implements AppProps {
   View() {
-    AbcOutlined()
+    CloseFilled()
+      .class("hhh")
+      .onClick(() => {
+        console.log("shit")
+      })
   }
 }
 
